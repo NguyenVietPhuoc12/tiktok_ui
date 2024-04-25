@@ -3,6 +3,7 @@ import Following from '~/pages/Following';
 import Home from '~/pages/Home';
 import Search from '~/pages/Search';
 import Upload from '~/pages/Upload';
+import Feedback from '~/pages/Feedback';
 
 const publicRoutes = [
     {
@@ -22,6 +23,10 @@ const publicRoutes = [
         path: '/search',
         component: Search,
         layout: null,
+    },
+    {
+        path: '/feedback',
+        component: Feedback,
     },
 ];
 

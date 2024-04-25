@@ -25,6 +25,56 @@ const MENU_ITEMS = [
     {
         icon: <FontAwesomeIcon icon={faLanguage} />,
         title: 'Vietnamese',
+        children: {
+            title: 'Languages',
+            data: [
+                {
+                    type: 'language',
+                    codeISO: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    codeISO: 'vi',
+                    title: 'Vietnamese',
+                },
+                {
+                    type: 'language',
+                    codeISO: '',
+                    title: 'العربية',
+                },
+                {
+                    type: 'language',
+                    codeISO: '',
+                    title: 'বাঙ্গালি (ভারত)',
+                },
+                {
+                    type: 'language',
+                    codeISO: '',
+                    title: 'Cebuano (Pilipinas)',
+                },
+                {
+                    type: 'language',
+                    codeISO: '',
+                    title: 'Deutsch',
+                },
+                {
+                    type: 'language',
+                    codeISO: '',
+                    title: 'Ελληνικά (Ελλάδα)',
+                },
+                {
+                    type: 'language',
+                    codeISO: '',
+                    title: 'Español',
+                },
+                {
+                    type: 'language',
+                    codeISO: '',
+                    title: 'Français',
+                },
+            ],
+        },
     },
     {
         icon: <FontAwesomeIcon icon={faQuestionCircle} />,
@@ -45,6 +95,8 @@ const Header = () => {
             setSearchResult([1, 2, 3]);
         }, 0);
     }, []);
+
+    const handleMenuChange = (menuItem) => {};
 
     return (
         <header className={cx('wrapper')}>
@@ -90,7 +142,7 @@ const Header = () => {
                         Upload
                     </Buttons>
                     <Buttons primary="true">Login</Buttons>
-                    <Menu items={MENU_ITEMS}>
+                    <Menu items={MENU_ITEMS} onChange={handleMenuChange}>
                         <button className={cx('header__content-actions-more')}>
                             <FontAwesomeIcon icon={faEllipsisVertical} />
                         </button>

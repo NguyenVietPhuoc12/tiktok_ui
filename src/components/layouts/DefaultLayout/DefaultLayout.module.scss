@@ -5,9 +5,10 @@
 }
 
 .container {
+    display: flex;
     width: var(--content-width, 1150px);
     height: 1000px;
-    display: flex;
+    padding: 0 var(--default-header-horizontal-spacer);
 }
 
 .content {

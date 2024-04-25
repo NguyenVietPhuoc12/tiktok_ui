@@ -5,9 +5,9 @@ import styles from './Menu.module.scss';
 
 const cx = classNames.bind(styles);
 
-const MenuItems = ({ data }) => {
+const MenuItems = ({ data, onClick }) => {
     return (
-        <Buttons className={cx('menu__content-item')} iconbtn={data.icon} to={data.to}>
+        <Buttons className={cx('menu__content-item')} iconbtn={data.icon} to={data.to} onClick={onClick}>
             {data.title}
         </Buttons>
     );
