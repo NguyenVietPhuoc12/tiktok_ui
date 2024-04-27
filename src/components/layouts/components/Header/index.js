@@ -2,9 +2,7 @@ import { useEffect, useState } from 'react';
 // Fontawesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-    faBitcoinSign,
     faCircleXmark,
-    faCloudArrowUp,
     faCoins,
     faEllipsisVertical,
     faGear,
@@ -16,7 +14,7 @@ import {
     faSignOut,
     faSpinner,
 } from '@fortawesome/free-solid-svg-icons';
-import { faEnvelope, faPaperPlane, faUser } from '@fortawesome/free-regular-svg-icons';
+import { faUser } from '@fortawesome/free-regular-svg-icons';
 
 // Tippy library
 import HeadlessTippy from '@tippyjs/react/headless';
@@ -33,6 +31,8 @@ import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import Buttons from '~/components/Buttons';
 import Menu from '~/components/Popper/Menu';
+import { InboxIcon, SendIcon, UploadIcon } from '~/components/Icons';
+import Image from '~/components/Image';
 
 // Constants
 const cx = classNames.bind(styles);
@@ -153,7 +153,7 @@ const Header = () => {
                         interactive
                         render={(attrs) => {
                             return (
-                                <div className={cx('header__content-search-result')} tabIndex="-1">
+                                <div className={cx('header__content-search-result')} tabIndex="-1" {...attrs}>
                                     <PopperWrapper>
                                         <h4 className={cx('search__result-title')}>Accounts</h4>
                                         <AccountItem />
@@ -185,17 +185,17 @@ const Header = () => {
                         <>
                             <Tippy delay={[0, 200]} content="Upload video" placement="bottom">
                                 <button className={cx('header__content-actions-btn')}>
-                                    <FontAwesomeIcon icon={faCloudArrowUp} />
+                                    <UploadIcon />
                                 </button>
                             </Tippy>
                             <Tippy delay={[0, 200]} content="Messages" placement="bottom">
                                 <button className={cx('header__content-actions-btn')}>
-                                    <FontAwesomeIcon icon={faPaperPlane} />
+                                    <SendIcon className={cx('send__icon')} />
                                 </button>
                             </Tippy>
                             <Tippy delay={[0, 200]} content="Inbox" placement="bottom">
                                 <button className={cx('header__content-actions-btn')}>
-                                    <FontAwesomeIcon icon={faEnvelope} />
+                                    <InboxIcon />
                                     <span className={cx('header__content-actions-notif')}>0</span>
                                 </button>
                             </Tippy>
@@ -210,10 +210,11 @@ const Header = () => {
                     )}
                     <Menu items={currentUserLogin ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUserLogin ? (
-                            <img
-                                src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/7159829341814128646~c5_100x100.jpeg?lk3s=a5d48078&x-expires=1714190400&x-signature=L3DPk8y94OhM7do5Q7zyCyc92PY%3D"
+                            <Image
+                                src="~/assets/images/user_avatar.jpeg"
                                 className={cx('user__login-avatar')}
                                 alt="avatar"
+                                fallback="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/7159829341814128646~c5_100x100.jpeg?lk3s=a5d48078&x-expires=1714359600&x-signature=v3As9CIBuhW0A1vUghr0CxPDDCU%3D"
                             />
                         ) : (
                             <button className={cx('header__content-actions-more')}>
