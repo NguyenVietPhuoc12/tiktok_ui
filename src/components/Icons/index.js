@@ -17,14 +17,14 @@ export const UploadIcon = ({ className, width = '3.2rem', height = '3.2rem' }) =
     );
 };
 
-export const SendIcon = ({ className, width = '3.2rem', height = '3.2rem' }) => {
+export const SendIcon = ({ className, width = '2.6rem', height = '2.6rem' }) => {
     return (
         <svg
             className={className}
             width={width}
             data-e2e=""
             height={height}
-            viewBox="0 0 60 60"
+            viewBox="0 0 48 48"
             fill="currentColor"
             xmlns="http://www.w3.org/2000/svg"
         >
