@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 // Fontawesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -22,12 +23,11 @@ import styles from './Header.module.scss';
 
 // Components necessary for Header
 import images from '~/assets/images';
-
 import Buttons from '~/components/Buttons';
 import Menu from '~/components/Popper/Menu';
 import { InboxIcon, SendIcon, UploadIcon } from '~/components/Icons';
 import Image from '~/components/Image';
-import Search from '~/components/layouts/components/Search';
+import SearchHeader from '../SearchHeader';
 
 // Constants
 const cx = classNames.bind(styles);
@@ -135,7 +135,7 @@ const Header = () => {
                 <div className={cx('header__content-logo')}>
                     <img src={images.logo} alt="tiktok" />
                 </div>
-                <Search />
+                <SearchHeader />
                 <div className={cx('header__content-actions')}>
                     {currentUserLogin ? (
                         <>

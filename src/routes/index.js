@@ -4,6 +4,7 @@ import Home from '~/pages/Home';
 import Search from '~/pages/Search';
 import Upload from '~/pages/Upload';
 import Feedback from '~/pages/Feedback';
+import Profile from '~/pages/Profile';
 
 const publicRoutes = [
     {
@@ -27,6 +28,10 @@ const publicRoutes = [
     {
         path: '/feedback',
         component: Feedback,
+    },
+    {
+        path: '/:nickname',
+        component: Profile,
     },
 ];
 

@@ -23,7 +23,7 @@
     input {
         flex: 1;
         height: 100%;
-        color: var(--text-bold-color);
+        color: var(--text-color, #828282);
         font-size: 1.6rem;
         font-weight: 400;
         line-height: 22px;
@@ -59,6 +59,19 @@
     transform: translateY(-50%);
     color: rgba(22, 24, 35, 0.34);
     cursor: pointer;
+}
+
+.header__content-loading {
+    animation: spinner 0.8s linear infinite;
+}
+
+@keyframes spinner {
+    from {
+        transform: translateY(-50%) rotate(0deg);
+    }
+    to {
+        transform: translateY(-50%) rotate(360deg);
+    }
 }
 
 .header__content-search-btn {
