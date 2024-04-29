@@ -8,6 +8,7 @@
     --text-color: #828282;
     --text-bold-color: #000000;
     --white-color: #ffffff;
+    --font-family: 'TiktokFont', sans-serif;
 }
 
 // Font embedded
@@ -52,7 +53,7 @@ html {
 }
 
 body {
-    font-family: 'TiktokFont', sans-serif;
+    font-family: var(--font-family);
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;

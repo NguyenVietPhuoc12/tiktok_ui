@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 // Fontawesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -28,6 +28,7 @@ import Menu from '~/components/Popper/Menu';
 import { InboxIcon, SendIcon, UploadIcon } from '~/components/Icons';
 import Image from '~/components/Image';
 import SearchHeader from '../SearchHeader';
+import routesConfig from '~/config/routes';
 
 // Constants
 const cx = classNames.bind(styles);
@@ -133,7 +134,9 @@ const Header = () => {
         <header className={cx('wrapper')}>
             <div className={cx('header__content')}>
                 <div className={cx('header__content-logo')}>
-                    <img src={images.logo} alt="tiktok" />
+                    <Link to={routesConfig.home} className={cx('header__content-logo-link')}>
+                        <img src={images.logo} alt="tiktok" />
+                    </Link>
                 </div>
                 <SearchHeader />
                 <div className={cx('header__content-actions')}>

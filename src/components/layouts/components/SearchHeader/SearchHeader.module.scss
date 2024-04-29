@@ -30,6 +30,7 @@
         background-color: transparent;
         appearance: textfield;
         caret-color: var(--primary-color);
+        font-family: var(--font-family);
     }
 
     input:not(:placeholder-shown) ~ .header__content-search-btn {

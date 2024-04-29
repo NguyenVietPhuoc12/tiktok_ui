@@ -93,7 +93,7 @@ const SearchHeader = () => {
                     )}
                     {loading && <FontAwesomeIcon className={cx('header__content-loading')} icon={faSpinner} />}
                     <button className={cx('header__content-search-btn')}>
-                        <FontAwesomeIcon icon={faMagnifyingGlass} />
+                        <FontAwesomeIcon icon={faMagnifyingGlass} onMouseDown={(e) => e.preventDefault()} />
                     </button>
                 </div>
             </HeadlessTippy>
