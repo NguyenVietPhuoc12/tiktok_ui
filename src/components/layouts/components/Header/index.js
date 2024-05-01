@@ -84,6 +84,46 @@ const MENU_ITEMS = [
                     codeISO: '',
                     title: 'Français',
                 },
+                {
+                    type: 'language',
+                    codeISO: '',
+                    title: 'বাঙ্গালি (ভারত)',
+                },
+                {
+                    type: 'language',
+                    codeISO: '',
+                    title: 'Cebuano (Pilipinas)',
+                },
+                {
+                    type: 'language',
+                    codeISO: '',
+                    title: 'Deutsch',
+                },
+                {
+                    type: 'language',
+                    codeISO: '',
+                    title: 'Ελληνικά (Ελλάδα)',
+                },
+                {
+                    type: 'language',
+                    codeISO: '',
+                    title: 'Español',
+                },
+                {
+                    type: 'language',
+                    codeISO: '',
+                    title: 'Français',
+                },
+                {
+                    type: 'language',
+                    codeISO: '',
+                    title: 'বাঙ্গালি (ভারত)',
+                },
+                {
+                    type: 'language',
+                    codeISO: '',
+                    title: 'Cebuano (Pilipinas)',
+                },
             ],
         },
     },

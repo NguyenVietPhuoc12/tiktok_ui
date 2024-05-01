@@ -55,7 +55,7 @@ const Menu = ({ children, items = [], hideOnClick = false, onChange = defaultFnc
                         <div className={cx('menu__content')} tabIndex="-1" {...attrs}>
                             <PopperWrapper className={cx('menu__popper')}>
                                 {history.length > 1 && <MenuHeader title="Languages" onBack={handleOnBackMenu} />}
-                                {renderItems()}
+                                <div className={cx('menu__popper-content')}>{renderItems()}</div>
                             </PopperWrapper>
                         </div>
                     );
