@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import Buttons from '~/components/Buttons';
 import classNames from 'classnames/bind';
 
@@ -15,6 +16,11 @@ const MenuItems = ({ data, onClick }) => {
             {data.title}
         </Buttons>
     );
+};
+
+MenuItems.propTypes = {
+    data: PropTypes.object.isRequired,
+    onClick: PropTypes.func,
 };
 
 export default MenuItems;
