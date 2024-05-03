@@ -43,6 +43,17 @@ const Menu = ({ children, items = [], hideOnClick = false, onChange = defaultFnc
         setHistory((prev) => prev.slice(0, 1));
     };
 
+    const renderMenuItems = (attrs) => {
+        return (
+            <div className={cx('menu__content')} tabIndex="-1" {...attrs}>
+                <PopperWrapper className={cx('menu__popper')}>
+                    {history.length > 1 && <MenuHeader title={currentMenu.title} onBack={handleOnBackMenu} />}
+                    <div className={cx('menu__popper-content')}>{renderItems()}</div>
+                </PopperWrapper>
+            </div>
+        );
+    };
+
     return (
         <div className={cx('wrapper')}>
             <Tippy
@@ -51,18 +62,7 @@ const Menu = ({ children, items = [], hideOnClick = false, onChange = defaultFnc
                 interactive
                 delay={[0, 500]}
                 hideOnClick={hideOnClick}
-                render={(attrs) => {
-                    return (
-                        <div className={cx('menu__content')} tabIndex="-1" {...attrs}>
-                            <PopperWrapper className={cx('menu__popper')}>
-                                {history.length > 1 && (
-                                    <MenuHeader title={currentMenu.title} onBack={handleOnBackMenu} />
-                                )}
-                                <div className={cx('menu__popper-content')}>{renderItems()}</div>
-                            </PopperWrapper>
-                        </div>
-                    );
-                }}
+                render={renderMenuItems}
                 onHide={handleHideItem}
             >
                 {children}

@@ -201,10 +201,10 @@ const Header = () => {
                         </>
                     ) : (
                         <>
-                            <Buttons iconbtn={<FontAwesomeIcon icon={faPlus} />} text="true">
+                            <Buttons iconbtn={<FontAwesomeIcon icon={faPlus} />} text>
                                 Upload
                             </Buttons>
-                            <Buttons primary="true">Login</Buttons>
+                            <Buttons primary>Login</Buttons>
                         </>
                     )}
                     <Menu items={currentUserLogin ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>

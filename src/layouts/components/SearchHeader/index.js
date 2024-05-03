@@ -9,22 +9,22 @@ import styles from './SearchHeader.module.scss';
 
 import * as searchServices from '~/services/searchService';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
-import AccountItem from '~/components/AccountItem';
+import SearchResult from '~/components/SearchResult';
 
 const cx = classNames.bind(styles);
 
 const SearchHeader = () => {
     const [searchValue, setSearchValue] = useState('');
     const [searchResult, setSearchResult] = useState([]);
-    const [showSearchResult, setShowSearchResult] = useState(true);
+    const [showSearchResult, setShowSearchResult] = useState(false);
     const [loading, setLoading] = useState(false);
 
     const searchInputRef = useRef();
 
-    const debounced = useDebounce(searchValue, 500);
+    const debouncedValue = useDebounce(searchValue, 500);
 
     useEffect(() => {
-        if (!debounced.trim()) {
+        if (!debouncedValue.trim()) {
             setSearchResult([]);
             return;
         }
@@ -32,14 +32,14 @@ const SearchHeader = () => {
         const fetchApi = async () => {
             setLoading(true);
 
-            const result = await searchServices.searchApi(debounced);
+            const result = await searchServices.searchApi(debouncedValue);
             setSearchResult(result);
 
             setLoading(false);
         };
 
         fetchApi();
-    }, [debounced]);
+    }, [debouncedValue]);
 
     const handleChangeSearchValue = (e) => {
         const inputValue = e.target.value;
@@ -69,9 +69,7 @@ const SearchHeader = () => {
                         <div className={cx('header__content-search-result')} tabIndex="-1" {...attrs}>
                             <PopperWrapper>
                                 <h4 className={cx('search__result-title')}>Accounts</h4>
-                                {searchResult.map((item) => {
-                                    return <AccountItem key={item.id} data={item} />;
-                                })}
+                                <SearchResult result={searchResult} />
                             </PopperWrapper>
                         </div>
                     );

@@ -33,8 +33,9 @@
 }
 
 .primary {
-    color: var(--white-color);
+    color: var(--white-color) !important;
     background-color: var(--primary-color);
+    font-weight: 500;
 
     &:hover {
         border-color: var(--primary-color);
@@ -65,9 +66,12 @@
     margin-left: 8px;
 }
 
-.icon,
-.title {
+.icon {
     color: rgb(22, 24, 35, 0.75);
+    font-weight: 600;
+}
+.title {
+    line-height: normal;
     font-weight: 600;
 }
 

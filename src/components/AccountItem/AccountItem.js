@@ -8,7 +8,7 @@ import Image from '~/components/Image';
 import styles from './AccountItem.module.scss';
 const cx = classNames.bind(styles);
 
-function AccountItem({ data }) {
+const AccountItem = ({ data }) => {
     return (
         <Link to={`/${data.nickname}`} className={cx('wrapper')}>
             <Image className={cx('avatar')} src={data.avatar} alt={data.avatar} />
@@ -21,7 +21,7 @@ function AccountItem({ data }) {
             </div>
         </Link>
     );
-}
+};
 
 AccountItem.propTypes = {
     data: PropTypes.object.isRequired,
